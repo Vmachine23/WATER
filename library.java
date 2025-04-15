@@ -1,6 +1,6 @@
 public class library {
     String title;
-    int cerial;
+    int cerialnumber;
     String author;
 
   public library(String title, int cerial , String author){
@@ -11,7 +11,7 @@ public class library {
   public String getTitle(){
     return title;
   }
-  public int getCerial(){
+  public int getCerialnumber(){
     return cerial;
   }
   public String getAuthor(){
