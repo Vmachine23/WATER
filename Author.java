@@ -18,7 +18,7 @@ public class Author{
   }
 
   public void setfirstName(String firstName) {
-    this.fistName=firstName;
+    this.fistName = firstName;
 
   }
 
