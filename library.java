@@ -1,18 +1,18 @@
-public class library {
+public class book {
     String title;
-    int serialnumber;
+    int serialNumber;
     String author;
 
-  public library(String title, int serialnumber , String author){
+  public book(String title, int serialNumber , String author){
     this.title = title;
-    this.serialnumber = serialnumber;
+    this.serialNumber = serialNumber;
     this.author = author; 
   }
   public String getTitle(){
     return title;
   }
   public int getSerialnumber(){
-    return serialnumber;
+    return serialNumber;
   }
   public String getAuthor(){
     return author;
@@ -21,7 +21,7 @@ public class library {
     this.title = title;
   }
   public void setSerialnumber(int serialnumber){
-    this.serialnumber = serialnumber;
+    this.serialNumber = serialNumber;
   }
   public void setAuthor(String author){
     this.author = author;
