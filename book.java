@@ -20,7 +20,7 @@ public class book {
   public void setTitle(String title){
     this.title = title;
   }
-  public void setserialNumber(int serialNumber){
+  public void setSerialNumber(int serialNumber){
     this.serialNumber = serialNumber;
   }
   public void setAuthor(String author){
