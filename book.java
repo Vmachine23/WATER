@@ -11,7 +11,7 @@ public class book {
   public String getTitle(){
     return title;
   }
-  public int getSerialnumber(){
+  public int getserialNumber(){
     return serialNumber;
   }
   public String getAuthor(){
@@ -20,7 +20,7 @@ public class book {
   public void setTitle(String title){
     this.title = title;
   }
-  public void setSerialnumber(int serialnumber){
+  public void setserialNumber(int serialNumber){
     this.serialNumber = serialNumber;
   }
   public void setAuthor(String author){
