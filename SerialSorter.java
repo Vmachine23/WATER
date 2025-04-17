@@ -3,7 +3,7 @@ public  class SerialSorter {
       for(int i = 0; i< arr.length-1; i++){
        int minIndex = i;
       }
-      for(int j=1+1; j<arr.length; j++){
+      for(int j=i; j<arr.length; j++){
         if(arr[j].getSerialNumber() <         arr[minIndex].getSerialNumber()){
        minIndex = j;
         }
