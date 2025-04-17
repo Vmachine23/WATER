@@ -12,7 +12,7 @@ public  class SerialSorter {
 //Swap
      Book temp = arr[i];
      arr[i] = arr[minIndex];
-     arr[minIndex] = temp;
+     arr[minIndex] = temp;t
     }
   }
 }
