@@ -5,8 +5,8 @@ Group members:
 Rethabile (202402341)
 Emmanuel (202403199)
 Ayesha (202403998)
-Tshego
-Wazha
+Tshego (202400081)
+Wazha (202402992)
 
 1. Minimal Domain Setup
 ● Rationale: Online system for a University Library in which book keeping data is manipulated and updated according to changes that would occur in the library.
@@ -20,7 +20,7 @@ Wazha
 ● Each group member has made commits 
 
 3. Next Steps (End Week 1)
-Next week we will add a sorter and insertion utility class
+•Add a selection sorter to sort by different Book field types (author, serialnumber and title), and either a linear search or binary search to search these book fields(to be decided).
 
 
 
