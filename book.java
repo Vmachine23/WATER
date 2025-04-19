@@ -5,7 +5,7 @@ public class book {
     private String location;
 
 
-  public book(String title, int serialNumber, String author) {
+  public book(String title, int serialNumber, Author author) {
     this.title = title;
     this.serialNumber = serialNumber;
     this.author = author; 
@@ -24,7 +24,7 @@ public class book {
     return serialNumber;
   }
 
-  public String getAuthor(){
+  public Author getAuthor(){
     return author;
   }
 
@@ -39,7 +39,7 @@ public class book {
     return location;
   }
 
-  public void setAuthor(String author){
+  public void setAuthor(Author author){
     this.author = author;
   }
 
