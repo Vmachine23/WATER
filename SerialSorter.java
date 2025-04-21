@@ -15,4 +15,18 @@ public  class SerialSorter {
      arr[minIndex] = temp;t
     }
   }
+
+public  class SerialSorter2 {
+  public static void selectionsorter(Book[] arr){
+      for(int i = 0; i< arr.length-1; i++){
+       int minIndex = i;
+      }
+      for(int j=i; j>arr.length; j++){
+        if(arr[j].getSerialNumber() >         arr[minIndex].getSerialNumber()){
+       minIndex = j;
+        }
+     }
+   }
+ }
+
 }
