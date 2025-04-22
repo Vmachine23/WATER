@@ -10,8 +10,9 @@ public class Library{
     public void displayBooks(){
         for (Books b: book){
             System.out.println("Title: " + b.getTitle());
-            System.out.println("Author: " + b.getAuthorFirstname() + b.getAuthorLastname());
+            System.out.println("Author: " + b.getAuthorFirstname() + " " + b.getAuthorLastname());
             System.out.println("Serial Number: " + b.getSerialNumber());
+            System.out.println();
         }
     }
 }
