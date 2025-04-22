@@ -13,11 +13,9 @@ public  class SerialSorter {
      Book temp = arr[i];
      arr[i] = arr[minIndex];
      arr[minIndex] = temp;t
-    }
-  }
 
-public  class SerialSorter2 {
-  public static void selectionsorter(Book[] arr){
+
+  public static void selectionsorter2(Book[] arr){
       for(int i = 0; i< arr.length-1; i++){
        int minIndex = i;
       }
@@ -29,4 +27,5 @@ public  class SerialSorter2 {
    }
  }
 
+    }
 }
