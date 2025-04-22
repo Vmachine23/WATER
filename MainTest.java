@@ -60,9 +60,8 @@ public class MainTest{
                 }
                 else if (input == 3){
                     System.out.println("What is the target serial numbernumber?");
-                    System.out.println();
-                    UtilitySearcher.SearchSerialNumber(b, 9);
-    
+                    int target = in.nextInt();
+                    UtilitySearcher.SearchSerialNumber(b, target);
                 }
                 break;
     
