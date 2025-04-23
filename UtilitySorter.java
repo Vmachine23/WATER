@@ -28,5 +28,19 @@ public class UtilitySorter {
             array[j + 1] = key;
         }
     }
+
+  public static void titleSorter(Books[] array) {
+        for (int i = 1; i < array.length; i++) {
+            String key = array[i].getTitle();
+            int j = i - 1;
+
+
+            while (j >= 0 && array[j].getTitle().compareTo(key) > 0) {
+                array[j + 1] = array[j];
+                j = j - 1;
+            }
+            array[j + 1] = key;
+        }
+    }
 }
     
