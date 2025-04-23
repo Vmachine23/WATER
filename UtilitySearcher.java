@@ -1,15 +1,20 @@
 public class UtilitySearcher{
-        public static int SearchSerialNumber(Books[] arr, int target){
-            for (int i=0; i < arr.length; i++){
-                if (arr[i].getSerialNumber() == target) {
-                    System.out.println("A book was found with the matching serial number!");
-                    System.out.println("Title: " + arr[i].getTitle());
-                    System.out.println("Author: " + arr[i].getAuthorFirstname() + " " + arr[i].getAuthorLastname());
-                    System.out.println("Serial Number: " + arr[i].getSerialNumber());
-                    System.out.println();
-                    return i;
-                }
-            }
+        public static int binarySerialNumberSearch(Books[] arr, int targetScore) {
+    int low = 0;
+    int high = arr.length - 1;
+     while (low <= high) {
+      int mid = (low + high) / 2;
+ if (arr[mid].getSerialNumber() == targetScore) {
+ return mid;
+ } else if (arr[mid].getSerialNumber() < targetScore) {
+ low = mid + 1;
+ } else {
+ high = mid - 1;
+ }
+ }
+ return -1;
+}
+
             System.out.println("Sorry... no current book that matches your serial number...");
             return -1;
         }
