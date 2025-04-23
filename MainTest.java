@@ -71,7 +71,9 @@ public class MainTest{
                     }
                 }
                 else if (input == 2){
-                    System.out.println("");
+                    System.out.println("What is the target title?");
+                    String target = in.next();
+                    UtilitySeacher.SearchTitle(g, target);
                 }
                 else if (input == 3){
                     System.out.println("What is the target serial numbernumber?");
