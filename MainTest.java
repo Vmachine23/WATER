@@ -61,12 +61,12 @@ public class MainTest{
                         if (input == 1){
                             System.out.println("What is the target Author's first name?");
                             String target = in.next();
-                            UtilitySeacher.SearchAuthor(g, target)
+                            UtilitySeacher.SearchFirstName(g, target)
                         }
                         else if (input == 2){
                             System.out.println("What is the target Author's last name?");
                             String target = in.next();
-                            UtilitySeacher.SearchAuthor(g, target);
+                            UtilitySeacher.SearchLastName(g, target);
                         }
                     }
                 }
