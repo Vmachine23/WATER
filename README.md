@@ -22,6 +22,9 @@ Wazha (202402992)
 3. Next Steps (End Week 1)
 •Add a selection sorter to sort by different Book field types (author, serialnumber and title), and either a linear search or binary search to search these book fields(to be decided).
 
+WEEK 2
+
+1 Made changes to week one removed Author class 
 
 
 
