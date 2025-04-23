@@ -77,6 +77,31 @@ public class MainTest{
                 else if (input == 3){
                     System.out.println("What is the target serial numbernumber?");
                     int target = in.nextInt();
+                    
+        public static int readAndParse() throws InvalidInputException {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        String input = sc.nextLine();
+        try {
+        return Integer.parseInt(input);
+        } 
+        catch (NumberFormatException e) {
+        throw new InvalidInputException("Not a valid integer: " + input);
+        } 
+        finally {
+        System.out.println("Finally block: always runs!");
+        }
+    }
+    
+    public static void main(String[] args) {
+        try {
+        int value = readAndParse();
+        System.out.println("Parsed int: " + value);
+        } 
+        catch (InvalidInputException e) {
+        System.out.println("Error: " + e.getMessage());
+        }
+    }
                     UtilitySearcher.binarySerialNumberSearch(b, target);
                 }
                 System.out.println("Did you find the book you were looking for?");
