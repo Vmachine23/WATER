@@ -15,5 +15,18 @@ public class UtilitySorter {
     }
   }
 
+  public static void authorSorter(Books[] array) {
+        for (int i = 1; i < array.length; i++) {
+            String key = array[i].getAuthor();
+            int j = i - 1;
+
+            
+            while (j >= 0 && array[j].getAuthor().compareTo(key) > 0) {
+                array[j + 1] = array[j];
+                j = j - 1;
+            }
+            array[j + 1] = key;
+        }
+    }
 }
     
