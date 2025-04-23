@@ -53,7 +53,9 @@ public class MainTest{
                 System.out.println("3.Serial Number");
                 input = in.nextInt();
                 if (input == 1){
-                    System.out.println("");
+                    System.out.println("What is the target Author's name?");
+                    String target = in.next();
+                    UtilitySeacher.SearchAuthor(g, target);
                 }
                 else if (input == 2){
                     System.out.println("");
