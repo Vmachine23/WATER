@@ -24,7 +24,26 @@ Wazha (202402992)
 
 WEEK 2
 
-1 Made changes to week one removed Author class 
+NB: We made changes to the week one utility classes by deleting author class and kept it as a field 
+
+1 Selection and Insertion Sorter
+● We made two insertion sorter methods and one selection sorter for serial number. They were placed in one class called UtilitySorter.java
+
+2 Linear and Binary Searcher
+● We made a class called UtilitySearcher.java
+that holds one Binary search method for the serial number and three Linear search methods for title author first name and last name
+
+3 Integration 
+● We made a Library class which is an ArrayList  that stores the data for the book
+● We added a switch which allows students using the system to search for books available by title, serialnumber or by author 
+● Main App created has switch and declared objects structured to allow user to choose
+
+4 Custom Exception
+
+
+5 Next Steps (End of Week 2)
+○ We are going to add arguments to create Admin mode as well as add final updates to the code
+
 
 
 
