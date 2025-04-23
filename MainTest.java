@@ -53,27 +53,25 @@ public class MainTest{
                 System.out.println("3.Serial Number");
                 input = in.nextInt();
                 if (input == 1){
+                    System.out.println("Search by: ");
+                    System.out.println("1.Author's first name?");
+                    System.out.println("2.Author's last name?");
+                    input = in.nextInt();
                     if (input == 1){
-                        System.out.println("Search by: ");
-                        System.out.println("1.Author's first name?");
-                        System.out.println("2.Author's last name?");
-                        input = in.nextInt();
-                        if (input == 1){
-                            System.out.println("What is the target Author's first name?");
-                            String target = in.next();
-                            UtilitySeacher.SearchFirstName(g, target)
-                        }
-                        else if (input == 2){
-                            System.out.println("What is the target Author's last name?");
-                            String target = in.next();
-                            UtilitySeacher.SearchLastName(b, target);
-                        }
+                        System.out.println("What is the target Author's first name?");
+                        String target = in.next();
+                        UtilitySeacher.SearchFirstName(b, target);
                     }
+                    else if (input == 2){
+                        System.out.println("What is the target Author's last name?");
+                        String target = in.next();
+                        UtilitySeacher.SearchLastName(b, target);
+                    }        
                 }
                 else if (input == 2){
                     System.out.println("What is the target title?");
                     String target = in.next();
-                    UtilitySeacher.SearchTitle(g, target);
+                    UtilitySeacher.SearchTitle(b, target);
                 }
                 else if (input == 3){
                     System.out.println("What is the target serial numbernumber?");
