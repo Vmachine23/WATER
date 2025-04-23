@@ -66,7 +66,7 @@ public class MainTest{
                         else if (input == 2){
                             System.out.println("What is the target Author's last name?");
                             String target = in.next();
-                            UtilitySeacher.SearchLastName(g, target);
+                            UtilitySeacher.SearchLastName(b, target);
                         }
                     }
                 }
