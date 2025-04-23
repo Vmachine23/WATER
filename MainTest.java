@@ -16,16 +16,15 @@ public class MainTest{
         myLibrary.addBooks(b4);
         Scanner in = new Scanner(System.in);
         int input;
+        int choice;
         //menu
         do{
             System.out.println("Welcome to the library! How can I help you?");
             System.out.println("1.Display books");
-            System.out.println("2.Search for book");
-            System.out.println("3.Check out book");
-            System.out.println("4.Add new book");
-            System.out.println("5.Exit");
-            input = in.nextInt();
-            switch(input){
+            System.out.println("2.Search for & Check out a book");
+            System.out.println("3.Exit");
+            choice = in.nextInt();
+            switch(choice){
                 case 1:
                 System.out.println("How would you like the Catalogue to be displayed?");
                 System.out.println("1.Default");
@@ -46,7 +45,8 @@ public class MainTest{
                     System.out.println();
                 }
                 break;
-    
+
+                //Different ways to search for book before checking out
                 case 2:
                 System.out.println("1.Author");
                 System.out.println("2.Title");
@@ -60,36 +60,50 @@ public class MainTest{
                     if (input == 1){
                         System.out.println("What is the target Author's first name?");
                         String target = in.next();
-                        UtilitySeacher.SearchFirstName(b, target);
+
+                        UtilitySearcher.SearchFirstName(b, target);
                     }
                     else if (input == 2){
                         System.out.println("What is the target Author's last name?");
                         String target = in.next();
-                        UtilitySeacher.SearchLastName(b, target);
+                        UtilitySearcher.SearchLastName(b, target);
                     }        
                 }
                 else if (input == 2){
                     System.out.println("What is the target title?");
                     String target = in.next();
-                    UtilitySeacher.SearchTitle(b, target);
+                    UtilitySearcher.SearchTitle(b, target);
                 }
                 else if (input == 3){
                     System.out.println("What is the target serial numbernumber?");
                     int target = in.nextInt();
                     UtilitySearcher.binarySerialNumberSearch(b, target);
                 }
+                System.out.println("Did you find the book you were looking for?");
+                System.out.println("1.Yes");
+                System.out.println("2.No");
+                input= in.nextInt();
+                if (input == 1){
+                    System.out.println("Would you like to check out this book?");
+                    System.out.println("1.Yes");
+                    System.out.println("2.No");
+                    input = in.nextInt();
+                    if (input == 1){
+                        System.out.println("This book is to be returned within the next 30 days.");
+                        System.out.println("A fee of 50 thebe is charged per day that this book is returned late.");
+                    }
+                }
+                else if (input == 2){
+                    System.out.println("Sorry that you couldn't find your book.");
+                }
                 break;
-    
+
                 case 3:
-    
-    
-                break;
-    
-                case 4:
-    
+                System.out.println("Goodbye!");
                 break;
             }
-        }while(input != 5);
+        }while(choice != 3);
         in.close();
     }
 }
+
