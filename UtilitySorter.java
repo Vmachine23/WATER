@@ -15,26 +15,41 @@ public class UtilitySorter {
     }
   }
 
-  public static void authorSorter(Books[] array) {
+  public static void firstnameSorter(Books[] array) {
         for (int i = 1; i < array.length; i++) {
-            String key = array[i].getAuthor();
+            Books key = array[i];
             int j = i - 1;
 
             
-            while (j >= 0 && array[j].getAuthor().compareTo(key) > 0) {
+            while(j>=0 && array[j].getAuthorFirstname().compareTo(key.getAuthorFirstname())>0){
                 array[j + 1] = array[j];
                 j = j - 1;
             }
             array[j + 1] = key;
         }
+  }
+
+  public static void lastnameSorter(Books[] array) {
+    for (int i = 1; i < array.length; i++) {
+        Books key = array[i];
+        int j = i - 1;
+
+        
+        while(j>=0 && array[j].getAuthorLastname().compareTo(key.getAuthorLastname())>0){
+            array[j + 1] = array[j];
+            j = j - 1;
+        }
+        array[j + 1] = key;
     }
-  public static void titleSorter(Books[]array){
+}
+
+  public static void titleSorter(Books[] array){
     for (int i= 1; i< array.length; i++){
-      String key = array[i].getTitle ();
+      Books key = array[i];
       int j = i-1;
 
-      while(j>=0&& array [j].getTitle ().compareTo(key)>0){
-        array[j +1 ] = array [j];
+      while(j>=0 && array[j].getTitle().compareTo(key.getTitle())>0){
+        array[j +1 ] = array[j];
         j= j-1;
       }
       array[j + 1]= key;
