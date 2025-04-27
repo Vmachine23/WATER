@@ -15,7 +15,7 @@ public class InvalidInputException {
         throw new InvalidInputException("Not a valid integer: " + input);
         } 
         finally {
-        System.out.println("Finally block: always runs!");
+        System.out.println("Invalid exception caught!");
         }
     }
     
