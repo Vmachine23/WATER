@@ -1,9 +1,10 @@
 public class Books {
+//Fields 
     private String title;
     private int serialNumber;
     private String authorFirstname;
     private String authorLastname;
-    
+//Constructor   
     public Books(String title, String authorFirstname, String authorLastname, int serialNumber) {
         this.title = title;
         this.authorFirstname = authorFirstname;
