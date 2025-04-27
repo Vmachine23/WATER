@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
-public class MainTest{
+public class MainTest extends InvalidInputException{
+    public MainTest(String message) {
+        super(message);
+    }
     public static void main(String[] args){
         Library myLibrary = new Library();
         //Books
@@ -21,7 +24,7 @@ public class MainTest{
         do{
             System.out.println("Welcome to the library! How can I help you?");
             System.out.println("1.Display books");
-            System.out.println("2.Search for & Check out a book");
+            System.out.println("2.Check out a book");
             System.out.println("3.Exit");
             choice = in.nextInt();
             switch(choice){
@@ -45,8 +48,7 @@ public class MainTest{
                     System.out.println();
                 }
                 break;
-
-                //Different ways to search for book before checking out
+    
                 case 2:
                 System.out.println("1.Author");
                 System.out.println("2.Title");
@@ -70,39 +72,35 @@ public class MainTest{
                     }        
                 }
                 else if (input == 2){
+                    String target = "";
                     System.out.println("What is the target title?");
-                    String target = in.next();
+                    try {
+                        target = in.next(); // Expects a string
+                    } catch (java.util.InputMismatchException e) {
+                        System.out.println("InputMismatchException: Please enter a valid title.");
+                        in.next(); // Consume the invalid input
+                    }
                     UtilitySearcher.SearchTitle(b, target);
+                    try {
+                        target = in.next(); // Expects a string
+                        UtilitySearcher.SearchTitle(b, target);
+                    } catch (java.util.InputMismatchException e) {
+                        System.out.println("InputMismatchException: Invalid title.");
+                        in.next(); // Consume the invalid input
+                    }
+                    finally{
+                        System.out.println("Invalid exception caught!");
+                    }
                 }
                 else if (input == 3){
-                    System.out.println("What is the target serial numbernumber?");
-                    int target = in.nextInt();
-                    
-        public static int readAndParse() throws InvalidInputException {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter an integer: ");
-        String input = sc.nextLine();
-        try {
-        return Integer.parseInt(input);
-        } 
-        catch (NumberFormatException e) {
-        throw new InvalidInputException("Not a valid integer: " + input);
-        } 
-        finally {
-        System.out.println("Finally block: always runs!");
-        }
-    }
-    
-    public static void main(String[] args) {
-        try {
-        int value = readAndParse();
-        System.out.println("Parsed int: " + value);
-        } 
-        catch (InvalidInputException e) {
-        System.out.println("Error: " + e.getMessage());
-        }
-    }
-                    UtilitySearcher.binarySerialNumberSearch(b, target);
+                    try {
+                        int target = readAndParse();
+                        System.out.println("Parsed int: " + target);
+                        UtilitySearcher.binarySerialNumberSearch(b, target);
+                    } 
+                    catch (InvalidInputException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                 }
                 System.out.println("Did you find the book you were looking for?");
                 System.out.println("1.Yes");
@@ -131,4 +129,5 @@ public class MainTest{
         in.close();
     }
 }
+
 
