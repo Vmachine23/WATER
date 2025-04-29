@@ -12,6 +12,7 @@ public class Library{
             System.out.println("Title: " + b.getTitle());
             System.out.println("Author: " + b.getAuthorFirstname() + " " + b.getAuthorLastname());
             System.out.println("Serial Number: " + b.getSerialNumber());
+            System.out.println("Age: " + b.getAge());
             System.out.println();
         }
     }
