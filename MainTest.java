@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainTest extends InvalidInputException{
@@ -5,12 +6,18 @@ public class MainTest extends InvalidInputException{
         super(message);
     }
     public static void main(String[] args){
+        // Check command-line arg for "teacher mode"
+        boolean adminMode = false;
+        if (args.length > 0 && args[0].equalsIgnoreCase("admin")) {
+            adminMode = true;
+            System.out.println("[Admin Mode Enabled]");
+        }
         Library myLibrary = new Library();
         //Books
-        Books b1 = new Books("To Kill A Mockingbird", "Harper", "Lee", 2344);
-        Books b2 = new Books("Pride and Prejudice", "Jane", "Austin", 8999);
-        Books b3 = new Books("Alice's Adventures in Wonderland", "Lewis", "Carroll", 1111);
-        Books b4 = new Books("The Kiterunner", "Khaled", "Housseini", 9876);
+        Books b1 = new Books("To Kill A Mockingbird", "Harper", "Lee", 2344, "old");
+        Books b2 = new Books("Pride and Prejudice", "Jane", "Austin", 8999, "old");
+        Books b3 = new Books("Alice's Adventures in Wonderland", "Lewis", "Carroll", 1111, "old");
+        Books b4 = new Books("The Kiterunner", "Khaled", "Housseini", 9876, "old");
         Books[] b = { b1, b2, b3, b4 };
         //Adding Books
         myLibrary.addBooks(b1);
@@ -22,11 +29,25 @@ public class MainTest extends InvalidInputException{
         int choice;
         //menu
         do{
-            System.out.println("Welcome to the library! How can I help you?");
-            System.out.println("1.Display books");
-            System.out.println("2.Check out a book");
-            System.out.println("3.Exit");
-            choice = in.nextInt();
+            do{
+                  try {
+                    System.out.println("Welcome to the library! How can I help you?");
+                    System.out.println("1.Display books");
+                    System.out.println("2.Check out a book");
+                    if (adminMode) {
+                        System.out.println("3.Book to be added (Admin Only)");
+                    }
+                    System.out.println("4.Exit");
+                    choice = in.nextInt(); 
+                    if (choice < 1 || choice > 4) {
+                        System.out.println("Invalid choice. Please select a valid option.");
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter a number between 1 and 4.");
+                    in.next(); 
+                    choice = -1;
+                }
+            }while(choice < 1 || choice > 4);
             switch(choice){
                 case 1:
                 System.out.println("How would you like the Catalogue to be displayed?");
@@ -75,18 +96,11 @@ public class MainTest extends InvalidInputException{
                     String target = "";
                     System.out.println("What is the target title?");
                     try {
-                        target = in.next(); // Expects a string
-                    } catch (java.util.InputMismatchException e) {
-                        System.out.println("InputMismatchException: Please enter a valid title.");
-                        in.next(); // Consume the invalid input
-                    }
-                    UtilitySearcher.SearchTitle(b, target);
-                    try {
-                        target = in.next(); // Expects a string
+                        target = in.next();
                         UtilitySearcher.SearchTitle(b, target);
                     } catch (java.util.InputMismatchException e) {
                         System.out.println("InputMismatchException: Invalid title.");
-                        in.next(); // Consume the invalid input
+                        in.next(); 
                     }
                     finally{
                         System.out.println("Invalid exception caught!");
@@ -122,12 +136,32 @@ public class MainTest extends InvalidInputException{
                 break;
 
                 case 3:
+
+                System.out.println("Enter the title of the book: ");
+                String newtitle = in.nextLine();
+                newtitle = in.nextLine();
+
+          
+                System.out.println("Enter the author's first name: ");
+                String newauthorFirstname = in.nextLine();
+
+                System.out.println("Enter the author's last name: ");
+                String newauthorLastname = in.nextLine();
+
+                System.out.println("Enter the serial number: ");
+                int newserialNumber = in.nextInt();
+
+                Books newBook = new Books(newtitle, newauthorFirstname, newauthorLastname, newserialNumber, "new");
+                myLibrary.addBooks(newBook);
+                System.out.println("Book added successfully!");
+                System.out.println("Here is the current Catalogue: ");
+                myLibrary.displayBooks();
+
+                break;
+
+                case 4:
                 System.out.println("Goodbye!");
                 break;
             }
-        }while(choice != 3);
+        }while(choice != 4);
         in.close();
-    }
-}
-
-
