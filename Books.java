@@ -1,49 +1,57 @@
 public class Books {
-//Fields 
     private String title;
     private int serialNumber;
     private String authorFirstname;
     private String authorLastname;
-//Constructor   
-    public Books(String title, String authorFirstname, String authorLastname, int serialNumber) {
+    private String age;
+    
+    public Books(String title, String authorFirstname, String authorLastname, int serialNumber, String age) {
         this.title = title;
         this.authorFirstname = authorFirstname;
         this.authorLastname = authorLastname;
         this.serialNumber = serialNumber;
+        this.age = age;
     }
     //Methods
-
     //Getters and Setters
     public String getTitle(){
-        return title;
+        return this.title;
     }
     
     public int getSerialNumber(){
-        return serialNumber;
+        return this.serialNumber;
     }
     
-    public void setTitle(String title){
-        this.title = title;
+    public void setTitle(String newtitle){
+        this.title = newtitle;
     }
     
-    public void setSerialNumber(int serialNumber){ 
-        this.serialNumber = serialNumber;
+    public void setSerialNumber(int newserialNumber){ 
+        this.serialNumber = newserialNumber;
     }
     
     public String getAuthorFirstname() {
-        return authorFirstname;
+        return this.authorFirstname;
     }
  
-    public void setAuthorFirstname(String authorFirstname) {
-        this.authorFirstname = authorFirstname;
+    public void setAuthorFirstname(String newauthorFirstname) {
+        this.authorFirstname = newauthorFirstname;
     }
  
     public String getAuthorLastname() {
-        return authorLastname;
+        return this.authorLastname;
     }
     
-    public void setAuthorLastname(String authorLastname) {
-        this.authorLastname = authorLastname;
+    public void setAuthorLastname(String newauthorLastname) {
+        this.authorLastname = newauthorLastname;
+    }
+    
+    public String getAge() {
+        return this.age;
+    }
+
+    public void setAge(String newage){
+        this.age = newage;
     }
 }
 
