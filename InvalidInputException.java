@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//Custom made ezception to catch invalid entered integer during input stage
+//Custom made exception to catch invalid entered integer during input stage
 public class InvalidInputException extends Exception{
     public InvalidInputException(String message) {
         super(message);
