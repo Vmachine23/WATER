@@ -29,9 +29,9 @@ public class MainTest extends InvalidInputException{
         int choice;
         //menu
         do{
-            do{
+            do{    
                   try {
-                    System.out.println("Welcome to the library! How can I help you?");
+                    System.out.println("Welcome to the library! How can I help you?"); //Options in admin mode
                     System.out.println("1.Display books");
                     System.out.println("2.Check out a book");
                     if (adminMode) {
@@ -43,14 +43,14 @@ public class MainTest extends InvalidInputException{
                         System.out.println("Invalid choice. Please select a valid option.");
                     }
                 } catch (InputMismatchException e) {
-                    System.out.println("Invalid input. Please enter a number between 1 and 4.");
+                    System.out.println("Invalid input. Please enter a number between 1 and 4.");//Used to catch invalid option added by administrator
                     in.next(); 
                     choice = -1;
                 }
-            }while(choice < 1 || choice > 4);
+            }while(choice < 1 || choice > 4);//Switch for Student mode  
             switch(choice){
                 case 1:
-                System.out.println("How would you like the Catalogue to be displayed?");
+                System.out.println("How would you like the Catalogue to be displayed?");//Menu for student
                 System.out.println("1.Default");
                 System.out.println("2.Ordered by serial number");
                 input = in.nextInt();
@@ -59,7 +59,7 @@ public class MainTest extends InvalidInputException{
                     myLibrary.displayBooks();
                 }
                 else if (input == 2){
-                    UtilitySorter.serialsorter(b);
+                    UtilitySorter.serialsorter(b);//Selection sorter option by author
                     for (Books c: b){
                         System.out.println("Title: " + c.getTitle());
                         System.out.println("Author: " + c.getAuthorFirstname() + " " + c.getAuthorLastname());
@@ -69,7 +69,7 @@ public class MainTest extends InvalidInputException{
                     System.out.println();
                 }
                 break;
-    
+    //Case two is to provide an option to search for specific book
                 case 2:
                 System.out.println("1.Author");
                 System.out.println("2.Title");
@@ -89,12 +89,12 @@ public class MainTest extends InvalidInputException{
                     else if (input == 2){
                         System.out.println("What is the target Author's last name?");
                         String target = in.next();
-                        UtilitySearcher.SearchLastName(b, target);
+                        UtilitySearcher.SearchLastName(b, target);//To search by author using linear search
                     }        
                 }
                 else if (input == 2){
                     String target = "";
-                    System.out.println("What is the target title?");
+                    System.out.println("What is the target title?");//To search by title using linear search
                     try {
                         target = in.next();
                         UtilitySearcher.SearchTitle(b, target);
@@ -103,14 +103,14 @@ public class MainTest extends InvalidInputException{
                         in.next(); 
                     }
                     finally{
-                        System.out.println("Invalid exception caught!");
+                        System.out.println("Invalid exception caught!");//Exception to check valid title
                     }
                 }
                 else if (input == 3){
                     try {
                         int target = readAndParse();
                         System.out.println("Parsed int: " + target);
-                        UtilitySearcher.binarySerialNumberSearch(b, target);
+                        UtilitySearcher.binarySerialNumberSearch(b, target);//Use of binary searcher to check for serial number  
                     } 
                     catch (InvalidInputException e) {
                         System.out.println("Error: " + e.getMessage());
@@ -121,7 +121,7 @@ public class MainTest extends InvalidInputException{
                 System.out.println("2.No");
                 input= in.nextInt();
                 if (input == 1){
-                    System.out.println("Would you like to check out this book?");
+                    System.out.println("Would you like to check out this book?");//To check out book
                     System.out.println("1.Yes");
                     System.out.println("2.No");
                     input = in.nextInt();
@@ -135,7 +135,7 @@ public class MainTest extends InvalidInputException{
                 }
                 break;
 
-                case 3:
+                case 3://To add new Book to the library by Administrator 
 
                 System.out.println("Enter the title of the book: ");
                 String newtitle = in.nextLine();
