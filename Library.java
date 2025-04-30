@@ -6,7 +6,7 @@ public class Library{
     public void addBooks(Books b){
         book.add(b);
     }
-//Output for books in the library
+//Output for books available in the library
     public void displayBooks(){
         for (Books b: book){
             System.out.println("Title: " + b.getTitle());
