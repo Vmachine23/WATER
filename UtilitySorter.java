@@ -1,5 +1,5 @@
 public class UtilitySorter {
-  public static void serialsorter(Books[] arr){
+  public static void serialsorter(Books[] arr){ //Selection Sorter for searial number
     for(int i = 0; i< arr.length-1; i++){
       int minIndex = i;
       
@@ -16,7 +16,7 @@ public class UtilitySorter {
   }
 
   public static void firstnameSorter(Books[] array) {
-        for (int i = 1; i < array.length; i++) {
+        for (int i = 1; i < array.length; i++) { //Insertion sorter for author firstname
             Books key = array[i];
             int j = i - 1;
 
@@ -30,12 +30,12 @@ public class UtilitySorter {
   }
 
   public static void lastnameSorter(Books[] array) {
-    for (int i = 1; i < array.length; i++) {
+    for (int i = 1; i < array.length; i++) { //Insertion sorter for author lastname
         Books key = array[i];
         int j = i - 1;
 
         
-        while(j>=0 && array[j].getAuthorLastname().compareTo(key.getAuthorLastname())>0){
+        while(j>=0 && array[j].getAuthorLastname().compareTo(key.getAuthorLastname())>0){ 
             array[j + 1] = array[j];
             j = j - 1;
         }
@@ -43,7 +43,7 @@ public class UtilitySorter {
     }
 }
 
-  public static void titleSorter(Books[] array){
+  public static void titleSorter(Books[] array){ //Insertion sorter for title of the book
     for (int i= 1; i< array.length; i++){
       Books key = array[i];
       int j = i-1;
