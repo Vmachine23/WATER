@@ -1,5 +1,6 @@
 public class UtilitySearcher {
-    public static int binarySerialNumberSearch(Books[] arr, int targetScore) {  //A binary searcher for serial numbers
+    //A binary searcher for serial numbers
+    public static int binarySerialNumberSearch(Books[] arr, int targetScore) {
             int low = 0;
             int high = arr.length - 1;
             while (low <= high){
@@ -21,8 +22,9 @@ public class UtilitySearcher {
             System.out.println("Sorry... no current book that matches your serial number...");
             return -1;
     }
-
-    public static int SearchTitle(Books[] arr, String target){  //A linear searcher for Book title
+    
+      //A linear searcher for Book title
+    public static int SearchTitle(Books[] arr, String target){
         for (int i=0; i < arr.length; i++){
             if (arr[i].getTitle().equals(target)) {
                 System.out.println("A book was found with the matching title!");
@@ -37,7 +39,8 @@ public class UtilitySearcher {
         return -1;
     }
     
-    public static int SearchFirstName(Books[] arr, String target){ //Linear Search for author firstname
+    //Linear Search for author firstname
+    public static int SearchFirstName(Books[] arr, String target){ 
         for (int i=0; i < arr.length; i++){
             if (arr[i].getAuthorFirstname().equals(target)) {
                 System.out.println("A book was found with the matching first name!");   
@@ -51,8 +54,9 @@ public class UtilitySearcher {
         System.out.println("Sorry... no current book that matches this author's first name...");
         return -1;
     }
-
-    public static int SearchLastName(Books[] arr, String target){  //Linear search for author lastname
+    
+    //Linear search for author lastname
+    public static int SearchLastName(Books[] arr, String target){ 
         for (int i=0; i < arr.length; i++){
             if (arr[i].getAuthorLastname().equals(target)) {
                 System.out.println("A book was found with the matching last name!");
