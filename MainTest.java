@@ -30,7 +30,9 @@ public class MainTest extends InvalidInputException{
         //menu
         do{
             do{
-                  try {
+                 //catches if user enters an integer put of range and throws a message. 
+                //While loop ensures user enters a choice within range before program continues. 
+                try {
                     System.out.println("Welcome to the library! How can I help you?");
                     System.out.println("1.Display books");
                     System.out.println("2.Check out a book");
@@ -50,6 +52,7 @@ public class MainTest extends InvalidInputException{
             }while(choice < 1 || choice > 4);
             switch(choice){
                 case 1:
+                //User can choose to have books displayed in the order they are declared or sorted in ascending order.
                 System.out.println("How would you like the Catalogue to be displayed?");
                 System.out.println("1.Default");
                 System.out.println("2.Ordered by serial number");
@@ -71,6 +74,7 @@ public class MainTest extends InvalidInputException{
                 break;
     
                 case 2:
+                //User can search for book by author, title or serial number
                 System.out.println("1.Author");
                 System.out.println("2.Title");
                 System.out.println("3.Serial Number");
@@ -93,6 +97,7 @@ public class MainTest extends InvalidInputException{
                     }        
                 }
                 else if (input == 2){
+                    //Catches if user enters invalid String for title
                     try {
                         System.out.println("What is the target title?");
                         in.nextLine();
@@ -107,6 +112,7 @@ public class MainTest extends InvalidInputException{
                     }
                 }
                 else if (input == 3){
+                    //Catches if user enters invalid integer for serial number
                     try {
                         int target = readAndParse();
                         System.out.println("Parsed int: " + target);
@@ -116,6 +122,7 @@ public class MainTest extends InvalidInputException{
                         System.out.println("Error: " + e.getMessage());
                     }
                 }
+                //Option to check out book
                 System.out.println("Did you find the book you were looking for?");
                 System.out.println("1.Yes");
                 System.out.println("2.No");
@@ -136,7 +143,7 @@ public class MainTest extends InvalidInputException{
                 break;
 
                 case 3:
-
+                //Admin adds new book
                 System.out.println("Enter the title of the book: ");
                 String newtitle = in.nextLine();
                 newtitle = in.nextLine();
@@ -160,6 +167,7 @@ public class MainTest extends InvalidInputException{
                 break;
 
                 case 4:
+                //Exiy Option to end program
                 System.out.println("Goodbye!");
                 break;
             }
