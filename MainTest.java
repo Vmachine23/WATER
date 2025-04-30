@@ -96,7 +96,7 @@ public class MainTest extends InvalidInputException{
                     String target = "";
                     System.out.println("What is the target title?");//To search by title using linear search
                     try {
-                        target = in.next();
+                        target = in.nextLine();
                         UtilitySearcher.SearchTitle(b, target);
                     } catch (java.util.InputMismatchException e) {
                         System.out.println("InputMismatchException: Invalid title.");
