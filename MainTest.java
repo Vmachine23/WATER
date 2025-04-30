@@ -167,7 +167,7 @@ public class MainTest extends InvalidInputException{
                 break;
 
                 case 4:
-                //Exiy Option to end program
+                //Exit Option to end program
                 System.out.println("Goodbye!");
                 break;
             }
