@@ -13,13 +13,13 @@ public class MainTest extends InvalidInputException{
             System.out.println("[Admin Mode Enabled]");
         }
         Library myLibrary = new Library();
-        //Books
+        //Books available in the library
         Books b1 = new Books("To Kill A Mockingbird", "Harper", "Lee", 2344, "old");
         Books b2 = new Books("Pride and Prejudice", "Jane", "Austin", 8999, "old");
         Books b3 = new Books("Alice's Adventures in Wonderland", "Lewis", "Carroll", 1111, "old");
         Books b4 = new Books("The Kiterunner", "Khaled", "Housseini", 9876, "old");
         Books[] b = { b1, b2, b3, b4 };
-        //Adding Books
+        //Adding Books to the Library
         myLibrary.addBooks(b1);
         myLibrary.addBooks(b2);
         myLibrary.addBooks(b3);
@@ -30,7 +30,7 @@ public class MainTest extends InvalidInputException{
         //menu
         do{
             do{
-                 //catches if user enters an integer put of range and throws a message. 
+                 //catches if user enters an integer out of range and throws a message. 
                 //While loop ensures user enters a choice within range before program continues. 
                 try {
                     System.out.println("Welcome to the library! How can I help you?");
@@ -122,7 +122,7 @@ public class MainTest extends InvalidInputException{
                         System.out.println("Error: " + e.getMessage());
                     }
                 }
-                //Option to check out book
+                //Option to check out a book
                 System.out.println("Did you find the book you were looking for?");
                 System.out.println("1.Yes");
                 System.out.println("2.No");
