@@ -18,4 +18,5 @@ public class InvalidInputException extends Exception{
         System.out.println("Invalid exception caught!");
         }
     }
+    sc.close();
 }
