@@ -8,6 +8,7 @@ public class InvalidInputException extends Exception{
         Scanner sc = new Scanner(System.in);
         System.out.print("What is the target serial number you are looking for: ");
         String input = sc.nextLine();
+        sc.close();
         try {
         return Integer.parseInt(input); //Checks the integer put
         } 
@@ -18,5 +19,4 @@ public class InvalidInputException extends Exception{
         System.out.println("Invalid exception caught!");
         }
     }
-    sc.close();
 }
