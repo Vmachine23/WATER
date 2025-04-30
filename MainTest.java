@@ -6,7 +6,7 @@ public class MainTest extends InvalidInputException{
         super(message);
     }
     public static void main(String[] args){
-        // Check command-line arg for "teacher mode"
+        // Check command-line arg for "admin mode"
         boolean adminMode = false;
         if (args.length > 0 && args[0].equalsIgnoreCase("admin")) {
             adminMode = true;
