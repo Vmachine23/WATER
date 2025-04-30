@@ -5,7 +5,7 @@ Group members:
 Rethabile (202402341)
 Emmanuel (202403199)
 Ayesha (202403998)
-Tshego (202400081)
+Tshegofatso (202400081)
 Wazha (202402992)
 
 1. Minimal Domain Setup
